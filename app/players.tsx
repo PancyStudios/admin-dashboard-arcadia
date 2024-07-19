@@ -6,7 +6,6 @@ export async function User() {
   const session = await auth();
   const user = session?.user;
 
-
   if (!user) {
     return (
       <form
@@ -28,7 +27,7 @@ export async function User() {
           await signOut();
         }}
       >
-        <Button variant="outline">Sign Out</Button>
+        <Button variant="outline">Sign Out</Button> {user.email!} 
       </form>
       <Image
         className="h-8 w-8 rounded-full"
